@@ -1,0 +1,26 @@
+{
+  "Metadata": {
+    "title": "Topgap",
+    "description": "Dự án Next.js của bạn."
+  },
+  "Home": {
+    "title": "Sẵn sàng bắt đầu.",
+    "description": "Dự án Next.js đã được thiết lập với TypeScript, Tailwind CSS và App Router.",
+    "edit": "Chỉnh sửa <code>src/app/[locale]/page.tsx</code> để bắt đầu.",
+    "documentation": "Tài liệu Next.js"
+  },
+  "ThemeToggle": {
+    "label": "Đổi giao diện",
+    "ariaLabel": "Chuyển giao diện sáng / tối"
+  },
+  "LocaleSwitcher": {
+    "label": "Ngôn ngữ",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "NotFound": {
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn tìm kiếm không tồn tại.",
+    "back": "Về trang chủ"
+  }
+}

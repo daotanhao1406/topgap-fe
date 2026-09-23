@@ -1,0 +1,26 @@
+{
+  "Metadata": {
+    "title": "Topgap",
+    "description": "Your Next.js project."
+  },
+  "Home": {
+    "title": "Ready to get started.",
+    "description": "Your Next.js project is set up with TypeScript, Tailwind CSS and the App Router.",
+    "edit": "Edit <code>src/app/[locale]/page.tsx</code> to get started.",
+    "documentation": "Next.js documentation"
+  },
+  "ThemeToggle": {
+    "label": "Switch theme",
+    "ariaLabel": "Switch between light and dark mode"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "back": "Back to home"
+  }
+}
