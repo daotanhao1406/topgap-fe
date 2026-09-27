@@ -7,7 +7,7 @@
     "title": "Ready to get started.",
     "description": "Your Next.js project is set up with TypeScript, Tailwind CSS and the App Router.",
     "edit": "Edit <code>src/app/[locale]/page.tsx</code> to get started.",
-    "documentation": "Next.js documentation"
+    "matchupPoc": "Open Matchup POC"
   },
   "ThemeToggle": {
     "label": "Switch theme",

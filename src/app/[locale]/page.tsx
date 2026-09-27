@@ -1,11 +1,11 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleSwitcher } from "@/components/locale-switcher";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Code, Heading, Link, Paragraph } from "@heroui/react";
 import { buttonVariants } from "@heroui/styles";
 
 export default async function Home() {
-  const t = await getTranslations("Home");
+  const [t, locale] = await Promise.all([getTranslations("Home"), getLocale()]);
   return (
     <main className="flex min-h-screen items-center justify-center px-6 py-16">
       <div className="w-full max-w-xl">
@@ -34,10 +34,10 @@ export default async function Home() {
           })}
         </Paragraph>
         <Link
-          href="https://nextjs.org/docs"
+          href={`/${locale}/matchup-poc`}
           className={buttonVariants({ variant: "primary", className: "mt-8 no-underline" })}
         >
-          {t("documentation")} →
+          {t("matchupPoc")} →
         </Link>
       </div>
     </main>
