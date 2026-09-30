@@ -7,7 +7,7 @@
     "title": "Sẵn sàng bắt đầu.",
     "description": "Dự án Next.js đã được thiết lập với TypeScript, Tailwind CSS và App Router.",
     "edit": "Chỉnh sửa <code>src/app/[locale]/page.tsx</code> để bắt đầu.",
-    "matchupPoc": "Mở trang Matchup POC"
+    "arenaPoc": "POC Arena · Đối đầu"
   },
   "ThemeToggle": {
     "label": "Đổi giao diện",

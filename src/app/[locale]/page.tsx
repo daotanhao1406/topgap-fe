@@ -33,12 +33,14 @@ export default async function Home() {
             ),
           })}
         </Paragraph>
-        <Link
-          href={`/${locale}/matchup-poc`}
-          className={buttonVariants({ variant: "primary", className: "mt-8 no-underline" })}
-        >
-          {t("matchupPoc")} →
-        </Link>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href={`/${locale}/matchup-reference`} className={buttonVariants({ variant: "secondary", className: "no-underline" })}>
+            {locale === "vi" ? "POC Legends · Mẫu tham chiếu" : "Legends POC · References"} →
+          </Link>
+          <Link href={`/${locale}/matchup-arena`} className={buttonVariants({ variant: "secondary", className: "no-underline" })}>
+            {t("arenaPoc")} →
+          </Link>
+        </div>
       </div>
     </main>
   );

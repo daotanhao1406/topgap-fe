@@ -1,5 +1,13 @@
 # Topgap Project Guidelines
 
+## App-wide UI Design References
+
+- From now on, use all images in `public/images/references/` as the shared visual reference for the entire app, including every page, feature, and shared UI component.
+- Before creating or modifying UI, inspect the full set of reference images, including images added to this directory later. Derive a consistent design direction from the complete set and apply the most relevant reference patterns to the affected screen.
+- Follow the references for layout, visual hierarchy, typography, colors, spacing, surfaces, borders, imagery treatment, and component styling. Keep the design consistent across the app while adapting it to each feature's content and responsive needs.
+- Implement the reference designs using suitable HeroUI components and supported customization APIs. Preserve accessibility, light/dark theme support, Vietnamese/English localization, and the SEO requirements below.
+- These references guide all UI work going forward; update existing screens when they fall within the current task's scope.
+
 ## UI Components
 
 - When creating or modifying UI, prefer components from `@heroui/react` whenever the library provides a suitable component.
