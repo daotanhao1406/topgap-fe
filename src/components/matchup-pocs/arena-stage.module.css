@@ -37,6 +37,30 @@
 .iconFrame small { position: absolute; right: -3px; bottom: -3px; font-size: 9px; padding-inline: 3px; background: #20170e; border: 1px solid #a17c48; }
 .loadout > span > small { display: block; font-size: 7px; letter-spacing: .09em; color: #c1ae95; }
 .loadout strong { display: block; margin-top: 3px; font-size: 11px; font-weight: 500; }
+.enemySpellPicker { justify-content: center; }
+.spellTrigger { display: grid; grid-template-columns: 38px minmax(78px, auto) 16px; align-items: center; gap: 9px; min-height: 44px; padding: 3px 7px 3px 3px; color: #f2e5cf; border: 1px solid #84663f; background: linear-gradient(#251e19, #121112); box-shadow: inset 0 0 0 2px #0f0d0d; cursor: pointer; }
+.spellTrigger:hover, .spellTrigger[data-hovered='true'] { border-color: #d3b57c; background: linear-gradient(#30251b, #171314); }
+.spellTrigger:focus-visible { outline: 2px solid #e9ba75; outline-offset: 3px; }
+.selectedSpellIcon { width: 36px; height: 36px; padding: 2px; border: 1px solid #c89e5d; background: #080b0e; }
+.selectedSpellIcon img { width: 100%; height: 100%; object-fit: cover; }
+.selectedSpellText { min-width: 0; text-align: left; }
+.selectedSpellText small { display: block; color: #c1ae95; font-size: 7px; letter-spacing: .09em; }
+.selectedSpellText strong { display: block; margin-top: 3px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.spellTrigger > svg { color: #c59a5a; }
+.spellPopover { width: min(340px, calc(100vw - 24px)); padding: 0; overflow: visible; color: #eee6d9; border: 1px solid #a98249; border-radius: 0; background: #050c13; box-shadow: 0 14px 34px #000b, inset 0 0 0 3px #071019; font-family: var(--font-sans); }
+.spellDialog { position: relative; padding: 26px 26px 23px; outline: none; text-align: center; }
+.spellDialog::after { content: ''; position: absolute; left: 50%; bottom: -7px; width: 13px; height: 13px; border-right: 2px solid #a98249; border-bottom: 2px solid #a98249; background: #050c13; transform: translateX(-50%) rotate(45deg); }
+.spellHeading { margin: 0; color: #f3ede1; font: 700 24px/1.25 var(--font-sans); letter-spacing: .06em; text-transform: uppercase; }
+.spellDescription, .spellCooldown { margin: 10px auto 0; color: #aaa69f; font-size: 12px; line-height: 1.55; }
+.spellCooldown { margin-top: 5px; }
+.spellDivider { width: 68px; height: 1px; margin: 25px auto 21px; background: linear-gradient(90deg, transparent, #a98249, transparent); }
+.spellGrid { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.spellChoice { width: 50px; min-width: 50px; height: 50px; min-height: 50px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.spellChoice:hover { background: transparent; }
+.spellChoiceIcon { position: relative; width: 48px; height: 48px; flex-shrink: 0; border: 1px solid #6c5737; }
+.spellChoiceIcon img { width: 100%; height: 100%; object-fit: cover; }
+.spellChoice:hover .spellChoiceIcon { border-color: #c69b5a; filter: brightness(1.12); }
+.spellChoice[aria-pressed='true'] .spellChoiceIcon { border-color: #e0bd78; box-shadow: 0 0 0 2px #050c13, 0 0 0 3px #9e7945; }
 .center { grid-column: 2; grid-row: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; padding-inline: 8px; }
 .crest { width: 85px; height: 85px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: 1px solid #ac8650; outline: 1px solid #a985534d; outline-offset: 7px; border-radius: 50%; position: relative; background: radial-gradient(ellipse, #443023 0%, #1c1412 65%); box-shadow: inset 0 0 0 5px #1d1611, inset 0 0 0 6px #6b5135, 0 0 45px #d1914322; color: #dfba7d; }
 .crest::before, .crest::after { content: ''; width: 35px; height: 1px; background: linear-gradient(90deg, transparent, #b58e51); position: absolute; right: calc(100% + 9px); top: 50%; }
@@ -76,6 +100,13 @@
   .iconFrame { width: 27px; height: 27px; }
   .loadout > span > small { font-size: 8px; letter-spacing: 0; }
   .loadout strong { font-size: 10px; }
+  .enemySpellPicker { justify-content: flex-start; }
+  .spellTrigger { grid-template-columns: 29px minmax(55px, auto) 12px; gap: 5px; min-height: 35px; padding: 2px 4px 2px 2px; }
+  .selectedSpellIcon { width: 29px; height: 29px; padding: 1px; }
+  .selectedSpellText small { font-size: 6px; letter-spacing: 0; }
+  .selectedSpellText strong { font-size: 9px; }
+  .spellTrigger > svg { width: 11px; }
+  .spellDialog { padding: 22px 20px 20px; }
   .actions { margin-top: 16px; gap: 8px; }
   .actions .primary, .actions .swap { padding-inline: 11px; font-size: 10px; }
 }

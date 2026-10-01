@@ -31,9 +31,9 @@
 .container { max-width: 1280px; margin-inline: auto; padding: 0 40px; }
 .root a, .root button { transition: background-color .18s, color .18s, border-color .18s; }
 .root :is(a, button):focus-visible, .root [data-focus-visible='true'] { outline: 2px solid var(--accent); outline-offset: 5px; }
-.root h1, .root h2, .root h3, .root p { margin: 0; }
-.root h2 { font-weight: 700; }
-.root h3 { font-size: 14px; font-weight: 650; }
+.root :is(h1, h2, h3, p):where(:not([data-matchup-cards] *)) { margin: 0; }
+.root h2:where(:not([data-matchup-cards] *)) { font-weight: 700; }
+.root h3:where(:not([data-matchup-cards] *)) { font-size: 14px; font-weight: 650; }
 .root :is(h2, h3) svg { flex-shrink: 0; }
 .root .skip { position: absolute; top: -100px; left: 20px; background: var(--surface); color: var(--accent); padding: 12px; }
 .root .skip:focus { top: 10px; z-index: 5; }
@@ -185,7 +185,7 @@
   .command .heroTitle { font-size: 46px; }
   .command .duelArt { width: 22%; right: 18px; }
 }
-@media (max-width: 699px) {
+@media (max-width: 700px) {
   .container { padding-inline: 16px; }
   .topbar { min-height: 66px; gap: 12px; }
   .navCaption, .designBar > span { display: none; }
@@ -236,6 +236,7 @@
   --arena-inset: #322820;
   background-image: radial-gradient(ellipse at 50% 0%, #41271b50, transparent 780px);
 }
+.arena .container { max-width: 1440px; }
 .arena[data-theme='light'] { --arena-metal: #8f6d37; --arena-edge: #b4a080; --arena-inset: #e9e1d5; }
 .arena .topbar { min-height: 66px; border-bottom-color: var(--arena-edge); position: relative; }
 .arena .topbar::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 90px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--arena-edge)); }

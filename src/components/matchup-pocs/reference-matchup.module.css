@@ -202,6 +202,7 @@
   .ruleList { padding: 16px 14px; }.ruleList p { font-size: 11px; }.duelNote { display: none; }
   .credits { flex-direction: column; gap: 5px; font-size: 9px; }
   .root .stageButton { min-height: 40px; }
+  .arenaCards .loadout { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .nav { gap: 15px; }.nav .brand { font-size: 15px; gap: 5px; }.navLinks { gap: 12px; }.navLinks a { font-size: 9px; }.tools { gap: 0; }.root .iconButton { width: 29px; min-width: 29px; height: 29px; }
@@ -220,3 +221,34 @@
   .loadout { grid-template-columns: 1fr; }.keyAbility { flex-direction: row; }.profileArt { height: 150px; }
 }
 @media (prefers-reduced-motion: reduce) { .root *, .root *::before, .root *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Match Legends' card layout while filling Arena's available content width. */
+.root.arenaCards {
+  --page: var(--bg);
+  --nav: var(--bg);
+  --surface: inherit;
+  --heading: var(--raised);
+  --text: inherit;
+  --muted: inherit;
+  --gold: var(--accent);
+  --gold-bright: var(--accent);
+  --gold-line: var(--arena-metal);
+  --line: inherit;
+  --green: inherit;
+  --red: inherit;
+  width: 100%;
+  min-height: 0;
+  margin: 30px auto;
+  padding: 0;
+  background: var(--page);
+  scroll-margin-top: 20px;
+}
+.arenaCards,
+.arenaCards * { font-family: var(--font-sans) !important; }
+.root.arenaCards .panel { border-color: var(--arena-edge); background: linear-gradient(135deg, var(--raised), var(--surface) 60%); }
+.arenaCards .panelHeading { color: var(--accent); }
+.arenaCards .profileArt::after { background: linear-gradient(transparent 30%, #191719e6 90%); }
+.arenaCards .profileArt h3 { color: #e9ba75; }
+.arenaCards .profileArt span { color: #efece6; }
+.arenaCards .stageLegend i { background: var(--accent); }
+.arenaCards .stageLegend > span:last-child i { background: var(--red); }
