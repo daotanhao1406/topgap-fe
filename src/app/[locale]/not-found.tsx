@@ -8,7 +8,9 @@ export default async function NotFound() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-      <Heading level={1} className="text-3xl font-semibold">{t("title")}</Heading>
+      <Heading level={1} className="text-3xl font-semibold">
+        {t("title")}
+      </Heading>
       <Paragraph color="muted">{t("description")}</Paragraph>
       <Link href="/" className={linkVariants().base({ className: "underline underline-offset-4" })}>
         {t("back")}

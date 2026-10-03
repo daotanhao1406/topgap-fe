@@ -1,0 +1,101 @@
+.section {
+  margin: 36px 0 40px;
+}
+.section .title {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1.4;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+.grid .card {
+  display: block;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--arena-edge);
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--raised), var(--surface) 60%);
+  color: var(--text);
+  box-shadow: none;
+}
+.card h3 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.card .summary {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 650;
+}
+.card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+.card li {
+  padding-left: 2px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.card li + li {
+  margin-top: 12px;
+}
+.card li::marker {
+  color: var(--accent);
+}
+.ability {
+  display: inline;
+  white-space: nowrap;
+  color: var(--text);
+}
+.ability img {
+  display: inline-block;
+  margin-right: 3px;
+  border: 1px solid var(--arena-metal);
+  border-radius: 2px;
+  vertical-align: -4px;
+}
+.ability strong {
+  font-weight: 650;
+}
+@media (max-width: 950px) {
+  .grid {
+    gap: 12px;
+  }
+  .grid .card {
+    padding: 17px;
+  }
+  .card li,
+  .card .summary {
+    font-size: 13px;
+  }
+}
+@media (max-width: 699px) {
+  .section {
+    margin-top: 28px;
+  }
+  .section .title {
+    font-size: 20px;
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .grid .card {
+    padding: 22px;
+  }
+  .card li,
+  .card .summary {
+    font-size: 14px;
+  }
+}

@@ -10,8 +10,10 @@
 
 ## UI Components
 
-- When creating or modifying UI, prefer components from `@heroui/react` whenever the library provides a suitable component.
-- Customize HeroUI components through supported APIs, themes, and CSS classes to meet design requirements before building equivalent custom components.
+- Follow this implementation priority when creating or modifying UI: first use the raw components and primitives provided by `@heroui/react`; then style and compose them with Tailwind CSS utility classes; only use separate CSS files, CSS Modules, or custom CSS when HeroUI and Tailwind CSS cannot reasonably express the required behavior or design.
+- Prefer components from `@heroui/react` whenever the library provides a suitable component. Start from the closest raw HeroUI component before building an equivalent custom component.
+- Customize HeroUI components through supported APIs and Tailwind CSS utility classes. Reuse existing theme tokens and shared Tailwind patterns before adding custom CSS rules.
+- Limit imports of external CSS files and avoid creating component-specific stylesheet files by default. When custom CSS is technically necessary, keep it narrowly scoped and document the limitation that prevents a HeroUI-plus-Tailwind implementation.
 - Use plain HTML elements or custom components only when HeroUI has no suitable component or a specific technical limitation prevents its use. Semantic HTML elements for page layout may still be used as usual.
 - Preserve accessibility, light/dark theme support, and Vietnamese/English localization when integrating components.
 - These guidelines apply to work from this point forward. Do not automatically replace existing UI unless it falls within the scope of the current task.
@@ -77,3 +79,31 @@
 - For substantial public UI changes, check mobile layout and performance with available tooling such as Lighthouse or PageSpeed Insights. Use Search Console URL Inspection and field Core Web Vitals data when deployment access is available.
 - Reuse existing SEO checks or add focused automated checks when shared routing or metadata logic warrants them. Do not add brittle tests that only mirror static markup.
 - Report what was verified and any checks that could not be run. Do not claim successful indexing, field performance, or ranking improvements without evidence; identify any post-deployment verification still needed.
+
+## Project Summary
+
+A high-performance full-stack web application designed for League of Legends top lane players. Unlike traditional stat aggregators, it delivers actionable, micro-level 1v1 matchup guidance that can be read and applied within a 30-second loading screen.
+
+## Core Value Proposition
+
+- **30-Second Quick-Card View:** 3-block mobile-first summary (Matchup Rhythm, 3 Dos, 3 Don'ts/Enemy Gotchas).
+- **Practical Micro-Tactics:** Rank 1 enemy cooldowns, Wave 1–3 management tied to Jungle gank timers (2:45 ward / 3:15 gank), and 4 power spike checkpoints (Lv 1–3, Lv 6, First Base, 1st Completed Item).
+- **Dynamic Adaptations:** 1-click champion swap (`/a-vs-b` ⇄ `/b-vs-a`), enemy summoner spell toggle (Ignite/Ghost vs TP), and draft-phase counter-picks with execution rationale ("The Why").
+
+## Tech Stack & Architecture
+
+- **Frontend (Next.js App Router):** TypeScript, Tailwind CSS, SSR/SSG for sub-1s load times and automated SEO per matchup URL (`/[my-champ]-vs-[enemy-champ]`).
+- **Backend (NestJS):** Modular clean architecture (Controllers, Services, DTOs, Entities), RESTful API, PostgreSQL with Prisma ORM.
+- **External Integration:** Riot Data Dragon CDN for assets (icons, abilities, items) separated from internal tactical matchup metadata.
+
+## Development Priorities
+
+1. **Phase 1 (MVP):** Data schema, 10 hot matchups mock seed, `/champ-a-vs-champ-b` dynamic route, 30s Quick-Card UI, 1-click swap.
+2. **Phase 2 (Micro Execution):** Wave & Jungle timer widgets, 4-tier power spikes, summoner spell toggle.
+3. **Phase 3 (Scale & Automation):** Data Dragon asset sync, dynamic SEO metadata + sitemap generation, draft counter-pick advisor.
+
+## Coding Directives for AI
+
+- Keep responses strict, type-safe (TypeScript strict mode), and modular.
+- Do not hardcode image assets; reference Riot Data Dragon formats.
+- Preserve mobile-first responsiveness and instant load performance for all UI components.

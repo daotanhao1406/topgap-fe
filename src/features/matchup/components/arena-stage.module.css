@@ -1,0 +1,589 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 460px;
+  padding: 18px 34px 20px;
+  overflow: hidden;
+  color: #f2e5cf;
+  background: #151316;
+  border: 1px solid #947044;
+  box-shadow:
+    inset 0 0 0 3px #171310,
+    inset 0 0 0 4px #685038,
+    0 14px 40px #0c060826;
+}
+.stage::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 9px;
+  border: 1px solid #bd955837;
+}
+.backdrop {
+  object-fit: cover;
+  object-position: center 62%;
+  z-index: -3;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, #1413199e, #110e10cd 46%, #1c0e1294),
+    linear-gradient(0deg, #100d11 0%, transparent 35%);
+}
+.heading {
+  text-align: center;
+  position: relative;
+  padding-bottom: 14px;
+}
+.heading > span {
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: #d3b57c;
+}
+.heading h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 5px 0 !important;
+}
+.heading h1 span {
+  font-family: var(--font-sans);
+  font-size: 0.48em;
+  color: #c39b65;
+  font-style: italic;
+  margin-inline: 0.4em;
+}
+.heading p {
+  color: #c2b6a9;
+  font-size: 11px;
+}
+.duel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 240px) minmax(0, 1fr);
+  gap: 26px;
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  align-self: center;
+  align-items: center;
+}
+.champion {
+  min-width: 0;
+  max-width: 210px;
+  width: 100%;
+  justify-self: end;
+}
+.champion.enemy {
+  grid-column: 3;
+  justify-self: start;
+}
+.sideLabel {
+  display: block;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: #d9c29b;
+  margin-bottom: 10px;
+}
+.enemy .sideLabel {
+  color: #e6a9a0;
+}
+.portraitFrame {
+  height: 186px;
+  position: relative;
+  padding: 5px;
+  border: 1px solid #d0a865;
+  background: linear-gradient(135deg, #d6b875, #574027 30%, #201a16 50%, #9b7747 80%, #e1c28a);
+  box-shadow:
+    0 0 0 2px #100e11,
+    0 0 0 3px #796041,
+    0 0 34px #dda75c16;
+}
+.portraitFrame::before,
+.portraitFrame::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  border-color: #f0d195;
+}
+.portraitFrame::before {
+  top: -6px;
+  left: -6px;
+  border-top: 3px solid;
+  border-left: 3px solid;
+}
+.portraitFrame::after {
+  bottom: -6px;
+  right: -6px;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+}
+.enemy .portraitFrame {
+  border-color: #b68065;
+  box-shadow:
+    0 0 0 2px #100e11,
+    0 0 0 3px #785041,
+    0 0 34px #d7564120;
+}
+.portrait {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+.portraitWash {
+  position: absolute;
+  inset: 5px;
+  background: linear-gradient(transparent 40%, #100c10e6 86%, #100c10);
+  pointer-events: none;
+}
+.nameplate {
+  position: absolute;
+  bottom: 15px;
+  left: 8px;
+  right: 8px;
+  text-align: center;
+}
+.nameplate strong {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: block;
+}
+.nameplate > span {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #d8c8b3;
+}
+.loadout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 13px;
+  min-height: 40px;
+}
+.iconFrame {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+  border: 1px solid #bc985f;
+  box-shadow: 0 0 0 2px #1b1411;
+}
+.iconFrame img {
+  width: 100%;
+  height: 100%;
+}
+.iconFrame small {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  font-size: 9px;
+  padding-inline: 3px;
+  background: #20170e;
+  border: 1px solid #a17c48;
+}
+.loadout > span > small {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 0.09em;
+  color: #c1ae95;
+}
+.loadout strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.abilityCopy {
+  min-width: 0;
+  max-width: 175px;
+}
+.abilityCopy > span {
+  display: block;
+  margin-top: 5px;
+  color: #c9bcaa;
+  font-size: 8px;
+  line-height: 1.55;
+}
+.enemySpellPicker {
+  justify-content: center;
+}
+.spellTrigger {
+  display: grid;
+  grid-template-columns: 38px minmax(78px, auto) 16px;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 3px 7px 3px 3px;
+  color: #f2e5cf;
+  border: 1px solid #84663f;
+  background: linear-gradient(#251e19, #121112);
+  box-shadow: inset 0 0 0 2px #0f0d0d;
+  cursor: pointer;
+}
+.spellTrigger:hover,
+.spellTrigger[data-hovered="true"] {
+  border-color: #d3b57c;
+  background: linear-gradient(#30251b, #171314);
+}
+.spellTrigger:focus-visible {
+  outline: 2px solid #e9ba75;
+  outline-offset: 3px;
+}
+.selectedSpellIcon {
+  width: 36px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid #c89e5d;
+  background: #080b0e;
+}
+.selectedSpellIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.selectedSpellText {
+  min-width: 0;
+  text-align: left;
+}
+.selectedSpellText small {
+  display: block;
+  color: #c1ae95;
+  font-size: 7px;
+  letter-spacing: 0.09em;
+}
+.selectedSpellText strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.spellTrigger > svg {
+  color: #c59a5a;
+}
+.spellPopover {
+  width: min(340px, calc(100vw - 24px));
+  padding: 0;
+  overflow: visible;
+  color: #eee6d9;
+  border: 1px solid #a98249;
+  border-radius: 0;
+  background: #050c13;
+  box-shadow:
+    0 14px 34px #000b,
+    inset 0 0 0 3px #071019;
+  font-family: var(--font-sans);
+}
+.spellDialog {
+  position: relative;
+  padding: 26px 26px 23px;
+  outline: none;
+  text-align: center;
+}
+.spellDialog::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 13px;
+  height: 13px;
+  border-right: 2px solid #a98249;
+  border-bottom: 2px solid #a98249;
+  background: #050c13;
+  transform: translateX(-50%) rotate(45deg);
+}
+.spellHeading {
+  margin: 0;
+  color: #f3ede1;
+  font: 700 24px/1.25 var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.spellDescription,
+.spellCooldown {
+  margin: 10px auto 0;
+  color: #aaa69f;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.spellCooldown {
+  margin-top: 5px;
+}
+.spellDivider {
+  width: 68px;
+  height: 1px;
+  margin: 25px auto 21px;
+  background: linear-gradient(90deg, transparent, #a98249, transparent);
+}
+.spellGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.spellChoice {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.spellChoice:hover {
+  background: transparent;
+}
+.spellChoiceIcon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 1px solid #6c5737;
+}
+.spellChoiceIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.spellChoice:hover .spellChoiceIcon {
+  border-color: #c69b5a;
+  filter: brightness(1.12);
+}
+.spellChoice[aria-pressed="true"] .spellChoiceIcon {
+  border-color: #e0bd78;
+  box-shadow:
+    0 0 0 2px #050c13,
+    0 0 0 3px #9e7945;
+}
+.center {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 8px;
+}
+.crest {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid #ac8650;
+  outline: 1px solid #a985534d;
+  outline-offset: 7px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(ellipse, #443023 0%, #1c1412 65%);
+  box-shadow:
+    inset 0 0 0 5px #1d1611,
+    inset 0 0 0 6px #6b5135,
+    0 0 45px #d1914322;
+  color: #dfba7d;
+}
+.crest::before,
+.crest::after {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b58e51);
+  position: absolute;
+  right: calc(100% + 9px);
+  top: 50%;
+}
+.crest::after {
+  left: calc(100% + 9px);
+  right: auto;
+  transform: rotate(180deg);
+}
+.crest span {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+.center .swap {
+  min-height: 44px;
+  margin-top: 13px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #e5c799;
+  border: 1px solid #98784b;
+  border-radius: 0;
+  background: linear-gradient(#332a24, #1a1615);
+  box-shadow: inset 0 0 0 2px #171310;
+  font-size: 11px;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+.center .swap:hover {
+  filter: brightness(1.12);
+}
+@media (max-width: 699px) {
+  .stage {
+    min-height: 410px;
+    padding: 17px 13px 19px;
+  }
+  .heading {
+    padding-bottom: 16px;
+  }
+  .heading h1 {
+    font-size: clamp(19px, 5.2vw, 29px);
+    letter-spacing: 0.025em;
+  }
+  .heading p {
+    font-size: 10px;
+  }
+  .duel {
+    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
+    gap: 9px;
+  }
+  .champion {
+    max-width: 145px;
+  }
+  .portraitFrame {
+    height: 157px;
+    padding: 3px;
+  }
+  .portraitWash {
+    inset: 3px;
+  }
+  .portraitFrame::before,
+  .portraitFrame::after {
+    width: 15px;
+    height: 15px;
+  }
+  .portraitFrame::before {
+    top: -3px;
+    left: -3px;
+    border-width: 2px;
+  }
+  .portraitFrame::after {
+    right: -3px;
+    bottom: -3px;
+    border-width: 2px;
+  }
+  .sideLabel {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    min-height: 12px;
+  }
+  .nameplate {
+    bottom: 10px;
+    left: 4px;
+    right: 4px;
+  }
+  .nameplate strong {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .nameplate > span {
+    font-size: 8px;
+    margin-top: 2px;
+  }
+  .center {
+    padding: 0;
+  }
+  .crest {
+    width: 42px;
+    height: 42px;
+    outline-offset: 3px;
+    box-shadow: inset 0 0 0 3px #1d1611;
+  }
+  .crest span {
+    font-size: 16px;
+  }
+  .crest svg,
+  .crest::before,
+  .crest::after {
+    display: none;
+  }
+  .center .swap {
+    min-height: 36px;
+    margin-top: 9px;
+    padding: 7px 6px;
+    gap: 4px;
+    font-size: 9px;
+  }
+  .center .swap svg {
+    display: block;
+    width: 12px;
+  }
+  .loadout {
+    gap: 5px;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+  .iconFrame {
+    width: 27px;
+    height: 27px;
+  }
+  .loadout > span > small {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+  .loadout strong {
+    font-size: 10px;
+  }
+  .abilityCopy > span {
+    margin-top: 4px;
+    font-size: 7px;
+    line-height: 1.45;
+  }
+  .enemySpellPicker {
+    justify-content: flex-start;
+  }
+  .spellTrigger {
+    grid-template-columns: 29px minmax(55px, auto) 12px;
+    gap: 5px;
+    min-height: 35px;
+    padding: 2px 4px 2px 2px;
+  }
+  .selectedSpellIcon {
+    width: 29px;
+    height: 29px;
+    padding: 1px;
+  }
+  .selectedSpellText small {
+    font-size: 6px;
+    letter-spacing: 0;
+  }
+  .selectedSpellText strong {
+    font-size: 9px;
+  }
+  .spellTrigger > svg {
+    width: 11px;
+  }
+  .spellDialog {
+    padding: 22px 20px 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage *,
+  .stage *::before,
+  .stage *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
