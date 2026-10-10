@@ -2,11 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import { getSampleMatchup } from "../src/features/matchup/model/sample-matchup.ts";
-import {
-  abilityAssets,
-  championAssets,
-  summonerAssets,
-} from "../src/features/matchup/model/assets.ts";
+import { abilityAssets, championAssets } from "../src/features/matchup/model/assets.ts";
 
 test("both locale fixtures describe the same matchup and mechanics", () => {
   const vi = getSampleMatchup("vi"),
@@ -18,8 +14,6 @@ test("both locale fixtures describe the same matchup and mechanics", () => {
   for (const data of [vi, en]) {
     assert.equal(data.dos.length, 3);
     assert.equal(data.donts.length, 3);
-    assert.equal(data.spellAdaptation.againstSpell, "IGNITE");
-    assert.ok(data.spellAdaptation.adjustmentTip);
     assert.ok(
       data.spikes.level1to3 && data.spikes.level6 && data.spikes.firstBase && data.spikes.firstItem,
     );
@@ -34,11 +28,10 @@ test("both locale fixtures describe the same matchup and mechanics", () => {
   }
 });
 
-test("every referenced champion, ability and spell mirror exists", () => {
+test("every referenced champion and ability mirror exists", () => {
   const files = [
     ...Object.values(championAssets).flatMap((champion) => [champion.portrait, champion.splash]),
     ...Object.values(abilityAssets),
-    ...Object.values(summonerAssets).map((spell) => spell.icon),
   ];
   for (const file of files)
     assert.ok(existsSync(new URL(`../public${file}`, import.meta.url)), file);

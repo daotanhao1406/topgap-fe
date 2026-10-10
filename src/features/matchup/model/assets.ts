@@ -1,5 +1,3 @@
-import type { SupportedSummonerSpell } from "./types";
-
 // Optimized local mirrors of Riot Data Dragon artwork; see MATCHUP-POCS.md.
 // Keep the upstream identifiers with the mirrors so an asset refresh has one source.
 export const dataDragon = {
@@ -24,13 +22,6 @@ export const championAssets = {
     },
   },
 } as const;
-
-export const summonerAssets = {
-  TELEPORT: { riotId: "SummonerTeleport", icon: "/images/matchup/abilities/teleport.webp" },
-  IGNITE: { riotId: "SummonerDot", icon: "/images/matchup/abilities/ignite.webp" },
-} as const satisfies Record<SupportedSummonerSpell, { riotId: string; icon: string }>;
-
-export const arenaEnvironment = "/images/matchup/arena-environment.webp";
 
 export const abilityAssets = {
   FioraW: championAssets.fiora.abilities.W,

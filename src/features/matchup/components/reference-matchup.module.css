@@ -515,56 +515,6 @@
   color: var(--muted);
   font-size: 9px;
 }
-.spells {
-  display: flex;
-  gap: 13px;
-}
-.root .spellButton {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 7px;
-  min-width: 64px;
-  min-height: 67px;
-  height: auto;
-  padding: 0 2px;
-  background: transparent;
-  border-radius: 0;
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 400;
-}
-.spellImage {
-  position: relative;
-  display: block;
-  border: 1px solid var(--line);
-  padding: 3px;
-  background: var(--nav);
-}
-.spellImage > svg {
-  position: absolute;
-  bottom: -3px;
-  right: -3px;
-  color: var(--nav);
-  background: var(--gold-bright);
-  border: 1px solid var(--nav);
-}
-.spellButton[aria-pressed="true"] .spellImage {
-  border-color: var(--gold-bright);
-}
-.root .spellButton[aria-pressed="true"] {
-  color: var(--gold-bright);
-}
-.spellButton:hover .spellImage {
-  border-color: var(--gold);
-}
-.spellNote {
-  color: var(--muted);
-  font-size: 9px;
-  margin-top: 13px !important;
-  line-height: 1.8;
-}
 .planBody {
   padding: 18px 17px 15px;
 }
@@ -1250,17 +1200,6 @@
   }
   .panelHeading > span {
     display: none;
-  }
-  .spells {
-    gap: 5px;
-  }
-  .root .spellButton {
-    min-width: 51px;
-    font-size: 8px;
-  }
-  .spellImage img {
-    width: 31px;
-    height: 31px;
   }
   .rules {
     grid-template-columns: 1fr;

@@ -1,6 +1,5 @@
 export type MatchupDifficulty = "EASY" | "SKILL" | "HARD" | "NIGHTMARE";
 export type EarlyWaveStrategy = "SLOW_PUSH" | "CRASH_WAVE_3" | "FREEZE" | "GIVE_PRIO";
-export type SummonerSpell = "TELEPORT" | "IGNITE" | "GHOST";
 
 export interface KeyCooldown {
   assetId: "AatroxQ" | "AatroxW";
@@ -32,10 +31,4 @@ export interface MatchupDetail {
   donts: readonly string[];
   keyCooldowns: readonly KeyCooldown[];
   spikes: PowerSpikes;
-  spellAdaptation: {
-    againstSpell: SummonerSpell;
-    adjustmentTip: string;
-  };
 }
-
-export type SupportedSummonerSpell = Extract<SummonerSpell, "TELEPORT" | "IGNITE">;

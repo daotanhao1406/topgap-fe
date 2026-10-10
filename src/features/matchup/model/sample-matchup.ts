@@ -19,7 +19,7 @@ const mockFioraVsAatrox: MatchupDetail = {
   ],
   donts: [
     "Do not use W randomly before he uses E or Q3.",
-    "Do not all-in level 1 if he has Ignite and you miss first vital.",
+    "Do not all-in level 1 if you miss your first vital.",
     "Watch out for E+Q combos changing sweetspot location instantly.",
   ],
   keyCooldowns: [
@@ -44,10 +44,6 @@ const mockFioraVsAatrox: MatchupDetail = {
     firstBase: "Tiamat for Fiora (wave clear); Phage/Kindlegem for Aatrox (HP/CDR).",
     firstItem: "Trinity/Hydra: Fiora begins to out-scale hard in 1v1.",
   },
-  spellAdaptation: {
-    againstSpell: "IGNITE",
-    adjustmentTip: "He wants early kill. Concede prio wave 1-2, stay >70% HP.",
-  },
 };
 
 const vietnameseMatchup: MatchupDetail = {
@@ -61,7 +57,7 @@ const vietnameseMatchup: MatchupDetail = {
   ],
   donts: [
     "Không dùng W tùy tiện trước khi Aatrox dùng E hoặc Q3.",
-    "Không đánh đến cùng cấp 1 nếu Aatrox có Thiêu Đốt và bạn hụt điểm yếu đầu.",
+    "Không đánh đến cùng cấp 1 nếu bạn hụt điểm yếu đầu.",
     "Cẩn thận combo E+Q đổi vị trí vùng sát thương mạnh ngay lập tức.",
   ],
   keyCooldowns: [
@@ -86,10 +82,6 @@ const vietnameseMatchup: MatchupDetail = {
       "Fiora có lợi nếu kích hoạt hết R trong < 2,5 giây. Aatrox mạnh hơn trong giao tranh kéo dài.",
     firstBase: "Fiora: Tiamat (dọn lính). Aatrox: Búa Gỗ/Hỏa Ngọc (máu/hồi chiêu).",
     firstItem: "Tam Hợp/Rìu Mãng Xà: Fiora bắt đầu vượt trội trong đấu tay đôi.",
-  },
-  spellAdaptation: {
-    againstSpell: "IGNITE",
-    adjustmentTip: "Aatrox muốn hạ gục sớm. Nhường quyền đẩy đợt 1–2, giữ trên 70% máu.",
   },
 };
 

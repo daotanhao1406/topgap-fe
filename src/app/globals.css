@@ -2,7 +2,8 @@
 @import "@heroui/styles";
 
 @theme inline {
-  --font-sans: var(--font-chakra-petch), Arial, Helvetica, sans-serif;
+  --spacing: 4px;
+  --font-sans: var(--font-montserrat, var(--font-chakra-petch)), Arial, Helvetica, sans-serif;
 }
 
 :root {

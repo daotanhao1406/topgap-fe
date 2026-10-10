@@ -54,14 +54,11 @@ for (const locale of ["vi", "en"]) {
   }
 }
 
-for (const path of ["/vi/nonexistent", "/en/nonexistent"]) {
+for (const path of ["/vi/nonexistent", "/en/nonexistent", "/fr/matchup-arena"]) {
   const response = await fetch(`${base}${path}`, { redirect: "manual" });
   assert.equal(response.status, 404, `${path}: missing route`);
   console.log(`PASS ${path}: 404`);
 }
-// The existing locale proxy redirects unsupported/unprefixed paths to the default locale.
-assert.equal((await fetch(`${base}/fr/matchup-arena`)).status, 404);
-console.log("PASS unsupported locale resolves to 404");
 const sitemap = await fetch(`${base}/sitemap.xml`);
 assert.equal(sitemap.status, 200);
 const xml = await sitemap.text();
